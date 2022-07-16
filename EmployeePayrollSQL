@@ -1,1 +1,24 @@
 "--- Welcome to Employee Payroll  Program On MySQL DB "
+------------------------------------------------------------------------
+UC1--> Create a database Payroll_service and Show and Used that data base
+------------------------------------------------------------------------
+mysql> create database payroll_service;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cscorner           |
+| demo               |
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use payroll_service;
+Database changed
