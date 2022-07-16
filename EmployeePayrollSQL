@@ -52,7 +52,9 @@ mysql> insert into employee_payroll(name,salary,start)values
     -> ('Babu','60000','2020-02-25');
 Query OK, 3 rows affected (0.01 sec)
 Records: 3  Duplicates: 0  Warnings: 0
-
+----------------------------------------------------
+UC4--> Retrieve the data Employee_payroll data
+----------------------------------------------------
 mysql> select * from employee_payroll;
 +----+----------+--------+------------+
 | id | name     | salary | start      |
