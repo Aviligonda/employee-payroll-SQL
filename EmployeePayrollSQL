@@ -2,6 +2,10 @@
 ------------------------------------------------------------------------
 UC1--> Create a database Payroll_service and Show and Used that data base
 ------------------------------------------------------------------------
+Commands used -->
+1.Create database databaseName;
+2.USE databaseName;
+---------------------------------
 mysql> create database payroll_service;
 Query OK, 1 row affected (0.01 sec)
 
@@ -25,6 +29,10 @@ Database changed
 -----------------------------------------------------------------------
 UC2-->Create a Table inside the Payroll database
 -----------------------------------------------------------------------
+Commands Used-->
+CREATE TABLE tableName(Parameters with dataTypes);
+DESCRIBE tableName;
+--------------------------------------------
 mysql> create table employee_payroll(id int unsigned Not Null Auto_Increment,
     -> name varchar(30) Not Null,
     -> salary Double Not Null,
@@ -46,6 +54,10 @@ mysql> describe employee_payroll;
 --------------------------------------------------------------------
 UC3--> Inserting dat into a EmployeePayroll table
 --------------------------------------------------------------------
+Commands Used-->
+INSERT INTO tableName(variables)VALUES
+(All values);
+-----------------------------------------
 mysql> insert into employee_payroll(name,salary,start)values
     -> ('Srinivas','500000','2018-05-01'),
     -> ('Anji','25000','2019-06-05'),
@@ -55,6 +67,9 @@ Records: 3  Duplicates: 0  Warnings: 0
 ----------------------------------------------------
 UC4--> Retrieve the data Employee_payroll data
 ----------------------------------------------------
+Commands Used-->
+SELECT * FROM tableName
+----------------------------------
 mysql> select * from employee_payroll;
 +----+----------+--------+------------+
 | id | name     | salary | start      |
@@ -67,6 +82,10 @@ mysql> select * from employee_payroll;
 --------------------------------------------------------------
 UC5-->Ability to retrieve salary data for particular employee
 ---------------------------------------------------------------
+Commands Used-->
+SELECT columnName FROM tableName WHERE columnName='MatchesInput';
+SELECT * FROM tableName WHERE columnName BETWEEN CAST() AND DATE (NOW());
+------------------------------------------- -----------------------
 mysql> select salary from employee_payroll where name = 'Srinivas';
 
 +--------+
@@ -88,6 +107,11 @@ mysql> select * from employee_payroll where start between cast('2019-01-01' as d
 -----------------------------------------------------------------------
 UC6-->Ability to add gender to employee
 ------------------------------------------------------------------------
+Command Used-->
+ALTER TABLE tableName ADD COLUMN AFTER SOME_COLUMN;
+DESCRIBE tableName
+UPDATE tableName SET column ='Something' WHERE Column='Some';
+---------------------------------------------------------
 mysql> alter table employee_payroll add gender char(1) after name;
 Query OK, 0 rows affected (0.03 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -127,6 +151,7 @@ mysql> select * from employee_payroll;
 -------------------------------------------------------------------
 UC7-->Ability to find sum,avg,min,max and number males and females
 -------------------------------------------------------------------
+
 mysql> select sum(salary) from employee_payroll where gender ='M' group by gender;
 
 +-------------+
